@@ -1,13 +1,16 @@
 import "./UsedLetters.css";
 
 const UsedLetters = () => {
+  const usedLetters = ["A", "B"];
   return (
     <section className="used-letters-container">
       <h2>Used letters</h2>
       <ul className="used-letters">
-        <li className="used-letter">H,&nbsp;</li>
-        <li className="used-letter">A,&nbsp;</li>
-        <li className="used-letter">B</li>
+        {usedLetters.map((letter, key) => (
+          <li key={key} className="used-letter">
+            {`${letter}, `}
+          </li>
+        ))}
       </ul>
     </section>
   );
