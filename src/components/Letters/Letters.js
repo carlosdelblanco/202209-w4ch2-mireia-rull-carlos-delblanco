@@ -1,19 +1,19 @@
 import "./Letters.css";
 
-const Letters = ({ onLetterClick }) => {
+const Letters = ({ getLetterOnClick }) => {
   const alphabet = "abcdefghijklmnñopqrstuvwxyz";
 
   const getLetterClick = (event) => {
     event.preventDefault();
-    onLetterClick(event.target.textContent);
+    getLetterOnClick(event.target.textContent);
   };
 
   return (
     <ul className="letters">
       {alphabet.split("").map((letter, key) => (
         <li key={key} className="letter">
-          <a href={letter} action={getLetterClick}>
-            {letter}
+          <a href={letter} onClick={getLetterClick}>
+            {letter.toUpperCase()}
           </a>
         </li>
       ))}
